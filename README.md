@@ -3,6 +3,8 @@
 게임 목록(메타데이터) 편집 및 게임 번들 업로드를 위한 관리 사이트입니다.  
 파일/폴더를 선택하면 브라우저에서 zip으로 압축 후 Supabase Storage에 올리고, `app_games`를 자동으로 갱신합니다.
 
+**버전:** 0.0.1 (package.json 기준)
+
 ## 사전 요구 사항
 
 1. **Supabase 프로젝트**: [app-center/README.md](../README.md) 참고해 `app_games` 테이블 및 `game-bundles` Storage 버킷 생성
