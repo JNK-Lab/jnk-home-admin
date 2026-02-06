@@ -1,4 +1,5 @@
 import type { AppGame } from '../lib/types'
+import { getIconThumbnailUrl } from '../lib/iconUtils'
 import { BundleUpload } from './BundleUpload'
 import { IconUpload } from './IconUpload'
 
@@ -35,7 +36,7 @@ export function GameList({ games, onEdit, onUploadComplete }: GameListProps) {
             <tr key={g.id} style={{ borderTop: '1px solid #1a1a2e' }}>
               <td style={tdStyle}>
                 {g.icon_url ? (
-                  <img src={g.icon_url} alt="" style={{ width: 32, height: 32, objectFit: 'contain', borderRadius: 6 }} />
+                  <img src={getIconThumbnailUrl(g.icon_url) ?? g.icon_url} alt="" style={{ width: 32, height: 32, objectFit: 'contain', borderRadius: 6 }} />
                 ) : (
                   <span style={{ color: '#666', fontSize: 12 }}>-</span>
                 )}
