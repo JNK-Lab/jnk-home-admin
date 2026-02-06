@@ -32,12 +32,26 @@ export function Dashboard() {
     fetchGames()
   }
 
+  const handleToggleEnabled = async (game: AppGame, enabled: boolean) => {
+    await supabase.from('app_games').update({ enabled }).eq('id', game.id)
+    fetchGames()
+  }
+
+  const handleReorder = async (reorderedGames: AppGame[]) => {
+    await Promise.all(
+      reorderedGames.map((game, i) =>
+        supabase.from('app_games').update({ sort_order: i }).eq('id', game.id)
+      )
+    )
+    fetchGames()
+  }
+
   const handleSignOut = async () => {
     await supabase.auth.signOut()
   }
 
   return (
-    <div style={{ minHeight: '100vh', padding: 24 }}>
+    <div className="admin-dashboard" style={{ minHeight: '100vh' }}>
       <header style={{
         display: 'flex',
         justifyContent: 'space-between',
@@ -70,6 +84,8 @@ export function Dashboard() {
           games={games}
           onEdit={(g) => setEditingGame(g)}
           onUploadComplete={fetchGames}
+          onToggleEnabled={handleToggleEnabled}
+          onReorder={handleReorder}
         />
       )}
 

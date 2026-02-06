@@ -18,3 +18,32 @@ button, input, select, textarea {
 a {
   color: #6ab0ff;
 }
+
+/* Responsive: mobile-friendly padding and touch targets */
+.admin-dashboard {
+  padding: 24px;
+}
+@media (max-width: 600px) {
+  .admin-dashboard {
+    padding: 12px;
+  }
+  .admin-dashboard header {
+    margin-bottom: 16px;
+  }
+  .admin-dashboard h1 {
+    font-size: 20px !important;
+  }
+  .admin-game-list th,
+  .admin-game-list td {
+    padding: 8px 10px !important;
+    font-size: 13px !important;
+  }
+  .admin-game-list .admin-switch {
+    min-height: 44px;
+  }
+  .admin-game-list button {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 8px 12px !important;
+  }
+}
