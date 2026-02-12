@@ -23,6 +23,27 @@ a {
 .admin-dashboard {
   padding: 24px;
 }
+
+/* 테이블이 좁아지지 않도록 최소 너비 → 좁은 화면에서는 가로 스크롤 */
+.admin-game-list {
+  -webkit-overflow-scrolling: touch;
+}
+.admin-game-list table {
+  min-width: 640px;
+}
+/* 제목 셀: 한 글자씩 세로로 찍히지 않도록 최소 너비 + 한 줄 처리 */
+.admin-game-list .admin-game-list-title {
+  min-width: 5rem;
+  max-width: 12rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* 동작 셀: 버튼이 겹치지 않도록 최소 너비 */
+.admin-game-list .admin-game-list-actions {
+  min-width: 180px;
+}
+
 @media (max-width: 600px) {
   .admin-dashboard {
     padding: 12px;

@@ -107,7 +107,7 @@ function SortableRow({ game: g, onEdit, onUploadComplete, onToggleEnabled }: Sor
           <span style={{ color: '#666', fontSize: 12 }}>-</span>
         )}
       </td>
-      <td style={tdStyle}>{g.title}</td>
+      <td style={tdStyle} className="admin-game-list-title" title={g.title}>{g.title}</td>
       <td style={tdStyle}>{g.version}</td>
       <td style={tdStyle}>
         <label className="admin-switch" style={switchLabelStyle} onClick={(e) => e.stopPropagation()}>
@@ -126,7 +126,7 @@ function SortableRow({ game: g, onEdit, onUploadComplete, onToggleEnabled }: Sor
       <td style={{ ...tdStyle, maxWidth: 200, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
         {g.bundle_url ? '설정됨' : '-'}
       </td>
-      <td style={tdStyle} onClick={(e) => e.stopPropagation()}>
+      <td style={tdStyle} className="admin-game-list-actions" onClick={(e) => e.stopPropagation()}>
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
           <button type="button" onClick={() => onEdit(g)} style={btnSecondary}>
             편집
